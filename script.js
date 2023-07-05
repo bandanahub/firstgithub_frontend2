@@ -87,3 +87,15 @@ function calculateScore(rolls) {
   // Event listener for the "Roll Dice" button
   const rollButton = document.getElementById('roll-button');
   rollButton.addEventListener('click', rollDice);
+
+  //6.1 javascript update
+  // Event listener for the "Roll Dice" button
+const rollButton = document.getElementById('roll-button');
+rollButton.addEventListener('click', rollDice);
+
+// Event listener for the "Enter" key
+document.addEventListener('keydown', (event) => {
+  if (event.key === 'Enter') {
+    rollDice();
+  }
+});
