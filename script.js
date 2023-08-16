@@ -1,12 +1,12 @@
-// Global variables
+
 const diceElements = Array.from(document.querySelectorAll('.dice'));
 const scoreElement = document.getElementById('score');
 
-// Function to generate random dice rolls
+// generates random dice rolls
 function rollDice() {
   const rolls = diceElements.map(() => Math.floor(Math.random() * 6) + 1);
 
-  // Display the rolls on the dice elements
+ 
   for (let i = 0; i < diceElements.length; i++) {
     diceElements[i].textContent = rolls[i];
   }
@@ -25,14 +25,13 @@ function rollDice() {
   }
 }
 
-// Function to calculate the score  
+//  calculating score  
 function calculateScore(rolls) {
   let score = 0;
 
-  // Calculate the score based on the dice rolls
-  // You need to implement the scoring rules of the Ferengi Game of Daboo here.
 
-  // Example scoring logic (modify according to the game rules):
+
+  // logics according to game rules:
   for (const roll of rolls) {
     if (roll === 1) {
       score += 10;
@@ -46,14 +45,14 @@ function calculateScore(rolls) {
   return score;
 }
 
-// Function to reset the game
+//resets the game
 function resetGame() {
   // Reset dice rolls
   for (const diceElement of diceElements) {
     diceElement.textContent = '';
   }
 
-  // Reset the score
+  // Reset  score
   scoreElement.textContent = '0';
 }
 
@@ -75,12 +74,12 @@ function playSoundEffect(soundFile) {
   audio.play();
 }
 
-// Event listener for the "Roll Dice" button
+
 const RollButton = document.getElementById('roll-button');
 RollButton.addEventListener('click', function() {
   playSoundEffect('bell.mp3');
 
-  // Generate random dice rolls
+ 
   const rolls = diceElements.map(() => Math.floor(Math.random() * 6) + 1);
   
   // Display the rolls on the dice elements
@@ -89,7 +88,7 @@ RollButton.addEventListener('click', function() {
   }
 });
 
-// Event listener for the "Enter" key
+
 document.addEventListener('keydown', (event) => {
   if (event.key === 'Enter') {
     playSoundEffect('bell.mp3');
